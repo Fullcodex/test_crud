@@ -19,6 +19,7 @@ pipeline {
               }
             }
             steps {
+            	echo 'TEST'
                 //git branch: 'test', url: 'https://github.com/Fullcodex/Jenkins_Test.git'
                 //sh 'git commit -am "push test - master" && git push origin test:master'
             }
