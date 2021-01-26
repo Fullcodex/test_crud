@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'javac src/jenkins_test/Jenkins_Test.java'
+                sh 'javac src/main/java/accessingdatamysql/AccessingDataMysqlApplication.java'
             }
         }
         stage('Run') {
             steps {
-                sh 'cd src && java jenkins_test.Jenkins_Test'
+                sh 'cd src/main/java/accessingdatamysql && java accessingdatamysql.AccessingDataMysqlApplication'
             }
         }
         stage('Deploy') {
@@ -19,8 +19,8 @@ pipeline {
               }
             }
             steps {
-                git branch: 'test', url: 'https://github.com/Fullcodex/Jenkins_Test.git'
-                sh 'git commit -am "push test - master" && git push origin test:master'
+                //git branch: 'test', url: 'https://github.com/Fullcodex/Jenkins_Test.git'
+                //sh 'git commit -am "push test - master" && git push origin test:master'
             }
         }
     }
